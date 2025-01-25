@@ -4,7 +4,9 @@
 - age - число
 - gender - 'male' или 'female'
  */
-export function getPersons();
+type Gender = 'male' | 'female';
+type Person = { name: string; gender: Gender; age: number };
+export function getPersons(): Person[];
 
 /*
 Типизируйте функцию personToString, возвращающую строку и принимающую объект одного из следующих форматов:
@@ -18,4 +20,5 @@ export function getPersons();
    - gender - 'male' или 'female'
    - company- строка
  */
-export function personToString(person);
+type TEmployee = Person & { company: string };
+export function personToString(person: Person | TEmployee): string;
